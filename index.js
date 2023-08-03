@@ -1,0 +1,10 @@
+const express=require('express')
+const openairouter = require('./routes/openai.route')
+const cors=require('cors')
+const app=express()
+app.use(express.json())
+app.use(cors())
+app.use("/openai",openairouter)
+app.listen(4031,()=>{
+    console.log("connected to server")
+})
